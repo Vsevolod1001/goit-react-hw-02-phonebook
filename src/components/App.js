@@ -69,7 +69,9 @@ getVisibleContacts = () => {
       <div>
             <h1>Phonebook</h1>
             <ContactForm onSubmit={this.addContact}/>
-            <Filter value={filter} onChange={this.chandeFilter}/>
+            <h2>Contacts</h2>
+            <Filter value={filter} 
+            onChange={this.chandeFilter}/>
             <ContactList 
              contacts={visibleContacts}
              onDeleteContact={this.deleteContact}

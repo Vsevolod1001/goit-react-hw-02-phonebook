@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import './ContactForm.css'
+import propTypes from "prop-types";
 
 class ContactForm extends Component{
     state = {
@@ -19,7 +20,7 @@ class ContactForm extends Component{
 
     render() {
         return(
-            <div>
+            <div className="formDiv">
             <form 
             className="ContactForm"
             onSubmit={this.handleSubmit}>
@@ -57,4 +58,8 @@ class ContactForm extends Component{
         );
     }
 }
+ContactForm.propTypes = {
+    
+}
+
 export default ContactForm
