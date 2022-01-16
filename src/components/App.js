@@ -23,6 +23,12 @@ class App extends Component{
     }));
   };
   addContact = ({name, number}) => {
+    this.setState(prevState => {
+      if (prevState.contacts.find(contact => contact.name === name)) {
+        alert(`${name} is already in the contacts`);
+        return;
+      }
+    })
     // if (this.getVisibleContacts(name)) {
     //   alert(`${name} already exists`);
     //   return;
