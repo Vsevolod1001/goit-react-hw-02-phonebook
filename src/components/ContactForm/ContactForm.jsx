@@ -46,6 +46,7 @@ class ContactForm extends Component{
                     />
                 </label>
               <button 
+              className="btnForm"
                 type="submit"
                 >
                   add contact

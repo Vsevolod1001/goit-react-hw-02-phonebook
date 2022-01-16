@@ -6,14 +6,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgb(182, 126, 126);
 
 }
 .ContactLi{
-    color: violet;
+    color: rgb(63, 7, 63);
 }
 .ContactBtn{
     height: 30px;
     margin-right: 5px;
+}
+.ContactBtn:hover {
+    background-color: rgb(70, 11, 47);
+    color: rgb(216, 27, 27);
 }
 .ContactP{
     margin: 0;

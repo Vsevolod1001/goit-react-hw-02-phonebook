@@ -4,5 +4,16 @@
 .ContactForm{
     border: 2px solid tomato;
     width: 350px;
-    height: 100px;
+    height: 200px;
+    text-align: center;
+    padding-top: 15px;
+    
+    
+}
+.btnForm{
+    margin-top: 20px;
+    
+}
+.btnForm:hover {
+    background-color: burlywood;
 }
