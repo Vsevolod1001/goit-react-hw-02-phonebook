@@ -26,6 +26,8 @@ class ContactForm extends Component{
             onSubmit={this.handleSubmit}>
                 <label className="ContactLable"> Name: 
                 <input
+                className="formInput"
+
                     value={this.state.name}
                     onChange={this.handleChange}
                         type="text"
