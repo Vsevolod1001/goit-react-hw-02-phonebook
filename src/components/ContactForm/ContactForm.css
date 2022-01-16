@@ -1,0 +1,8 @@
+.ContactLable {
+    display: block;
+}
+.ContactForm{
+    border: 2px solid tomato;
+    width: 350px;
+    height: 100px;
+}
