@@ -12,10 +12,7 @@ class App extends Component{
         {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
         {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
       ],
-      filter: '',
-      name: '',
-      number: ''
-    
+      filter: '',    
   }
   deleteContact = (contactId) => {
     this.setState(prevState => ({
@@ -23,25 +20,33 @@ class App extends Component{
     }));
   };
   addContact = ({name, number}) => {
-    this.setState(prevState => {
-      if (prevState.contacts.find(contact => contact.name === name)) {
-        alert(`${name} is already in the contacts`);
-        return;
-      }
-    })
-    // if (this.getVisibleContacts(name)) {
-    //   alert(`${name} already exists`);
-    //   return;
-    // }
-    const contact = {
-      id: shortid.generate(),
-      name,
-      number
+    const {contacts} = this.state;
+    const newCard = {id: shortid.generate(), name, number}
+    const searchCard = contacts.find(contact => contact.name === newCard.name)
+    if (searchCard) {
+      alert(`${name} is already in the contacts`);
+      return;
+    } else {
+      this.setState(({contacts}) => ({
+        contacts: [newCard, ...contacts],
+      }))
+    }
+    // this.setState(prevState => {
+    //   if (prevState.contacts.find(contact => contact.name === name)) {
+    //     alert(`${name} is already in the contacts`);
+    //     return;
+    //   }
+    // })
+    
+    // const contact = {
+    //   id: shortid.generate(),
+    //   name,
+    //   number
       
-    };
-    this.setState(({contacts}) => ({
-      contacts: [contact, ...contacts],
-    }))
+    // };
+    // this.setState(({contacts}) => ({
+    //   contacts: [contact, ...contacts],
+    // }))
   }
   chandeFilter = (e) => {
     this.setState({filter: e.currentTarget.value})
