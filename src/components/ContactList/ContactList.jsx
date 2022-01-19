@@ -1,20 +1,19 @@
 import React from "react";
-import './ContactList.css'
 import Contact from "../Contact/Contact";
+import {ContactUl} from './ContactList.styled'
 import PropTypes from "prop-types";
 
 const ContactList = ({contacts, onDeleteContact}) => (
     <div>        
         {contacts.map(({id, name, number}) => (
-            <ul key={id} className="ContactUl">
-             <Contact 
-                id={id}
-                name={name}
-                number={number}
-                onDeleteContact={onDeleteContact}
-             />   
-               
-            </ul>
+            <ContactUl key={id}>
+                <Contact 
+                    id={id}
+                    name={name}
+                    number={number}
+                    onDeleteContact={onDeleteContact}
+                />   
+            </ContactUl>
         ))}
     </div>
 )
